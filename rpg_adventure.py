@@ -33,3 +33,7 @@ while True:
     print("6. Quit")
 
     choice = input("\nChoose an option (1-6): ")
+
+    if choice == "6":
+        print("\nThanks for playing. Goodbye!")
+        break
