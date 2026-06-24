@@ -20,3 +20,16 @@ player = {
 }
 
 print(f"\nWelcome, {player['name']}!")
+
+while True:
+    print("\n==========================")
+    print(" RPG Adventure Simulator")
+    print("==========================")
+    print("1. View Character")
+    print("2. Explore")
+    print("3. View Inventory")
+    print("4. Rest")
+    print("5. Visit Shop")
+    print("6. Quit")
+
+    choice = input("\nChoose an option (1-6): ")
