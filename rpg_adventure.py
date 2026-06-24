@@ -8,3 +8,6 @@ Date: 6/28/2026
 
 print("Welcome to RPG Adventure Simulator!")
 print("Create your hero and begin your journey.")
+
+player_name = input("\nEnter your hero's name: ")
+print(f"\nWelcome, {player_name}!")
