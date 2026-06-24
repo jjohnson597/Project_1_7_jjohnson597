@@ -10,4 +10,13 @@ print("Welcome to RPG Adventure Simulator!")
 print("Create your hero and begin your journey.")
 
 player_name = input("\nEnter your hero's name: ")
-print(f"\nWelcome, {player_name}!")
+player = {
+    "name": player_name,
+    "level": 1,
+    "health": 30,
+    "max_health": 30,
+    "attack": 6,
+    "gold": 10
+}
+
+print(f"\nWelcome, {player['name']}!")
