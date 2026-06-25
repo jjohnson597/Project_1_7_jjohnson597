@@ -18,7 +18,7 @@ player = {
     "attack": 6,
     "gold": 10
 }
-
+inventory = ["Health Potion", "Rusty Sword"]
 print(f"\nWelcome, {player['name']}!")
 
 while True:
