@@ -34,6 +34,16 @@ while True:
 
     choice = input("\nChoose an option (1-6): ")
 
-    if choice == "6":
+    if choice == "1":
+        print("\nCharacter Stats")
+        print("---------------")
+        print(f"Name: {player['name']}")
+        print(f"Level: {player['level']}")
+        print(f"Health: {player['health']}/{player['max_health']}")
+        print(f"Attack: {player['attack']}")
+        print(f"Gold: {player['gold']}")
+        input("\nPress Enter to continue...")
+
+    elif choice == "6":
         print("\nThanks for playing. Goodbye!")
         break
