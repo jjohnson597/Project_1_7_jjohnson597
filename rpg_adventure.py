@@ -38,11 +38,12 @@ while True:
     print("1. View Character")
     print("2. Explore")
     print("3. View Inventory")
-    print("4. Rest")
-    print("5. Visit Shop")
-    print("6. Quit")
+    print("4. Use Health Potion")
+    print("5. Rest")
+    print("6. Visit Shop")
+    print("7. Quit")
 
-    choice = input("\nChoose an option (1-6): ")
+    choice = input("\nChoose an option (1-7): ")
 
     if choice == "1":
         print("\nCharacter Stats")
