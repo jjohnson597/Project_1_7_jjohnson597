@@ -25,6 +25,12 @@ print(f"\nWelcome, {player['name']}!")
 
 locations = ("Forest", "Cave", "Abandoned Road")
 
+monsters = [
+    {"name": "Goblin", "health": 10, "attack": 3, "gold": 5},
+    {"name": "Skeleton", "health": 15, "attack": 4, "gold": 8},
+    {"name": "Orc", "health": 20, "attack": 5, "gold": 12}
+]
+
 while True:
     print("\n==========================")
     print(" RPG Adventure Simulator")
