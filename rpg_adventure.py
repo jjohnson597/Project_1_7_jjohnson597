@@ -62,3 +62,7 @@ while True:
     elif choice == "6":
         print("\nThanks for playing. Goodbye!")
         break
+
+    else:
+        print("\nInvalid choice. Please enter a number from 1 to 6.")
+        input("\nPress Enter to continue...")
