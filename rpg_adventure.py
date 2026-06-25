@@ -53,6 +53,12 @@ while True:
 
         input("\nPress Enter to continue...")
 
+    elif choice == "4":
+        player["health"] = player["max_health"]
+        print("\nYou rest at camp and recover your health.")
+        print(f"Health restored to {player['health']}/{player['max_health']}.")
+        input("\nPress Enter to continue...")
+
     elif choice == "6":
         print("\nThanks for playing. Goodbye!")
         break
