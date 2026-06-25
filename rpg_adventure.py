@@ -6,6 +6,8 @@ Starter code: No starter code was used.
 Date: 6/28/2026
 """
 
+import random
+
 print("Welcome to RPG Adventure Simulator!")
 print("Create your hero and begin your journey.")
 
@@ -20,6 +22,8 @@ player = {
 }
 inventory = ["Health Potion", "Rusty Sword"]
 print(f"\nWelcome, {player['name']}!")
+
+locations = ("Forest", "Cave", "Abandoned Road")
 
 while True:
     print("\n==========================")
