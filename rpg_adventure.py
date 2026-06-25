@@ -102,7 +102,16 @@ while True:
             if player["health"] > 0:
                 print(f"\nYou defeated the {monster['name']}!")
                 player["gold"] += monster["gold"]
+                player["level"] += 1
+                player["attack"] += 1
+                player["max_health"] += 2
+                player["health"] = player["max_health"]
+
                 print(f"You earned {monster['gold']} gold!")
+                print("You leveled up!")
+                print(f"Level: {player['level']}")
+                print(f"Attack increased to {player['attack']}.")
+                print(f"Max health increased to {player['max_health']}.")
 
             else:
                 print("\nYou were defeated...")
