@@ -56,7 +56,7 @@ while True:
 
     elif choice == "2":
         location = random.choice(locations)
-        event = random.choice(["gold", "item", "nothing"])
+        event = random.choice(["gold", "item", "monster", "nothing"])
 
         print(f"\nYou explore the {location}.")
 
