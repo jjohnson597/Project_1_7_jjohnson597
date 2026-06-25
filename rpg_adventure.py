@@ -31,6 +31,8 @@ monsters = [
     {"name": "Orc", "health": 20, "attack": 5, "gold": 12}
 ]
 
+boss_defeated = False
+
 shop_items = {
     "Health Potion": 8,
     "Iron Sword": 20,
@@ -47,7 +49,8 @@ while True:
     print("4. Use Health Potion")
     print("5. Rest")
     print("6. Visit Shop")
-    print("7. Quit")
+    print("7. Challenge Dragon King")
+    print("8. Quit")
 
     choice = input("\nChoose an option (1-7): ")
 
@@ -195,6 +198,18 @@ while True:
         input("\nPress Enter to continue...")
 
     elif choice == "7":
+        if player["level"] >= 3:
+            print("\nYou challenge the Dragon King...")
+            print("After a difficult battle, you defeat the Dragon King!")
+            print("You win the game!")
+            boss_defeated = True
+            break
+        else:
+            print("\nYou are not strong enough yet.")
+            print("Reach level 3 before challenging the Dragon King.")
+            input("\nPress Enter to continue...")
+
+    elif choice == "8":
         print("\nThanks for playing. Goodbye!")
         break
 
