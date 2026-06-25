@@ -52,7 +52,7 @@ while True:
     print("7. Challenge Dragon King")
     print("8. Quit")
 
-    choice = input("\nChoose an option (1-7): ")
+    choice = input("\nChoose an option (1-8): ")
 
     if choice == "1":
         print("\nCharacter Stats")
@@ -214,5 +214,5 @@ while True:
         break
 
     else:
-        print("\nInvalid choice. Please enter a number from 1 to 6.")
+        print("\nInvalid choice. Please enter a number from 1 to 8.")
         input("\nPress Enter to continue...")
