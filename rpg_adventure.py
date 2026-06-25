@@ -48,6 +48,27 @@ while True:
         print(f"Gold: {player['gold']}")
         input("\nPress Enter to continue...")
 
+    elif choice == "2":
+        location = random.choice(locations)
+        event = random.choice(["gold", "item", "nothing"])
+
+        print(f"\nYou explore the {location}.")
+
+        if event == "gold":
+            found_gold = random.randint(3, 10)
+            player["gold"] += found_gold
+            print(f"You found {found_gold} gold!")
+
+        elif event == "item":
+            found_item = random.choice(["Old Shield", "Magic Herb", "Iron Dagger"])
+            inventory.append(found_item)
+            print(f"You found a {found_item}!")
+
+        else:
+            print("You did not find anything this time.")
+
+        input("\nPress Enter to continue...")
+
     elif choice == "3":
         print("\nInventory")
         print("---------")
