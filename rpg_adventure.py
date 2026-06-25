@@ -44,6 +44,15 @@ while True:
         print(f"Gold: {player['gold']}")
         input("\nPress Enter to continue...")
 
+    elif choice == "3":
+        print("\nInventory")
+        print("---------")
+
+        for item in inventory:
+            print(f"- {item}")
+
+        input("\nPress Enter to continue...")
+
     elif choice == "6":
         print("\nThanks for playing. Goodbye!")
         break
