@@ -70,7 +70,39 @@ while True:
             inventory.append(found_item)
             print(f"You found a {found_item}!")
 
-        else:
+        elif event == "monster":
+            monster = random.choice(monsters)
+
+            print(f"\nA wild {monster['name']} appears!")
+
+            monster_health = monster["health"]
+
+            while monster_health > 0 and player["health"] > 0:
+                print(f"\nYour Health: {player['health']}")
+                print(f"{monster['name']} Health: {monster_health}")
+
+                input("Press Enter to attack...")
+
+                monster_health -= player["attack"]
+                print(f"You hit the {monster['name']}!")
+
+                if monster_health <= 0:
+                    break
+
+                player["health"] -= monster["attack"]
+                print(f"The {monster['name']} attacks you!")
+
+            if player["health"] > 0:
+                print(f"\nYou defeated the {monster['name']}!")
+                player["gold"] += monster["gold"]
+                print(f"You earned {monster['gold']} gold!")
+
+            else:
+                print("\nYou were defeated...")
+                player["health"] = player["max_health"]
+                print("You wake up safely back at camp.")
+
+        elif event == "nothing":
             print("You did not find anything this time.")
 
         input("\nPress Enter to continue...")
