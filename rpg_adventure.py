@@ -118,12 +118,30 @@ while True:
         input("\nPress Enter to continue...")
 
     elif choice == "4":
+        if "Health Potion" in inventory:
+            inventory.remove("Health Potion")
+
+            heal_amount = 15
+            player["health"] += heal_amount
+
+            if player["health"] > player["max_health"]:
+                player["health"] = player["max_health"]
+
+            print("\nYou drink a Health Potion.")
+            print(f"You recovered {heal_amount} health.")
+            print(f"Current Health: {player['health']}/{player['max_health']}")
+        else:
+            print("\nYou don't have a Health Potion!")
+
+        input("\nPress Enter to continue...")
+
+    elif choice == "5":
         player["health"] = player["max_health"]
         print("\nYou rest at camp and recover your health.")
         print(f"Health restored to {player['health']}/{player['max_health']}.")
         input("\nPress Enter to continue...")
 
-    elif choice == "6":
+    elif choice == "7":
         print("\nThanks for playing. Goodbye!")
         break
 
