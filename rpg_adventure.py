@@ -29,6 +29,25 @@ def view_inventory(inventory):
 
     input("\nPress Enter to continue...")
 
+def use_health_potion(player, inventory):
+    """Use a health potion from inventory to restore player health."""
+    if "Health Potion" in inventory:
+        inventory.remove("Health Potion")
+
+        heal_amount = 15
+        player["health"] += heal_amount
+
+        if player["health"] > player["max_health"]:
+            player["health"] = player["max_health"]
+
+        print("\nYou drink a Health Potion.")
+        print(f"You recovered {heal_amount} health.")
+        print(f"Current Health: {player['health']}/{player['max_health']}")
+    else:
+        print("\nYou don't have a Health Potion!")
+
+    input("\nPress Enter to continue...")
+
 print("Welcome to RPG Adventure Simulator!")
 print("Create your hero and begin your journey.")
 
@@ -144,22 +163,7 @@ while True:
         view_inventory(inventory)
 
     elif choice == "4":
-        if "Health Potion" in inventory:
-            inventory.remove("Health Potion")
-
-            heal_amount = 15
-            player["health"] += heal_amount
-
-            if player["health"] > player["max_health"]:
-                player["health"] = player["max_health"]
-
-            print("\nYou drink a Health Potion.")
-            print(f"You recovered {heal_amount} health.")
-            print(f"Current Health: {player['health']}/{player['max_health']}")
-        else:
-            print("\nYou don't have a Health Potion!")
-
-        input("\nPress Enter to continue...")
+        use_health_potion(player, inventory)
 
     elif choice == "5":
         player["health"] = player["max_health"]
