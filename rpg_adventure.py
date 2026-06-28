@@ -8,6 +8,17 @@ Date: 6/28/2026
 
 import random
 
+def view_character(player):
+    """Display the player's current character statistics."""
+    print("\nCharacter Stats")
+    print("---------------")
+    print(f"Name: {player['name']}")
+    print(f"Level: {player['level']}")
+    print(f"Health: {player['health']}/{player['max_health']}")
+    print(f"Attack: {player['attack']}")
+    print(f"Gold: {player['gold']}")
+    input("\nPress Enter to continue...")
+
 print("Welcome to RPG Adventure Simulator!")
 print("Create your hero and begin your journey.")
 
@@ -55,14 +66,7 @@ while True:
     choice = input("\nChoose an option (1-8): ")
 
     if choice == "1":
-        print("\nCharacter Stats")
-        print("---------------")
-        print(f"Name: {player['name']}")
-        print(f"Level: {player['level']}")
-        print(f"Health: {player['health']}/{player['max_health']}")
-        print(f"Attack: {player['attack']}")
-        print(f"Gold: {player['gold']}")
-        input("\nPress Enter to continue...")
+        view_character(player)
 
     elif choice == "2":
         location = random.choice(locations)
