@@ -95,6 +95,19 @@ def visit_shop(player, inventory, shop_items):
     else:
         print("\nThat item is not sold here.")
 
+def challenge_boss(player):
+    """Allow the player to challenge the final boss if they meet the level requirement."""
+    if player["level"] >= 3:
+        print("\nYou challenge the Dragon King...")
+        print("After a difficult battle, you defeat the Dragon King!")
+        print("You win the game!")
+        return True
+
+    print("\nYou are not strong enough yet.")
+    print("Reach level 3 before challenging the Dragon King.")
+    input("\nPress Enter to continue...")
+    return False
+    
     input("\nPress Enter to continue...")
 
 print("Welcome to RPG Adventure Simulator!")
@@ -221,60 +234,10 @@ while True:
         visit_shop(player, inventory, shop_items)
 
     elif choice == "7":
-        if player["level"] >= 3:
-            print("\nYou challenge the Dragon King...")
-            print("After a difficult battle, you defeat the Dragon King!")
-            print("You win the game!")
-            boss_defeated = True
-            break
-        else:
-            print("\nYou are not strong enough yet.")
-            print("Reach level 3 before challenging the Dragon King.")
-            input("\nPress Enter to continue...")
+        boss_defeated = challenge_boss(player)
 
-            print(f"{item}: {price} gold")
-
-        item_choice = input("\nEnter the item name to buy or type 'exit': ")
-
-        if item_choice == "exit":
-            print("\nYou leave the shop.")
-
-        elif item_choice in shop_items:
-            item_price = shop_items[item_choice]
-
-            if player["gold"] >= item_price:
-                player["gold"] -= item_price
-                inventory.append(item_choice)
-                print(f"\nYou bought {item_choice}!")
-
-                if item_choice == "Iron Sword":
-                    player["attack"] += 3
-                    print("Your attack increased by 3.")
-
-                elif item_choice == "Steel Shield":
-                    player["max_health"] += 5
-                    player["health"] += 5
-                    print("Your max health increased by 5.")
-
-            else:
-                print("\nYou do not have enough gold.")
-
-        else:
-            print("\nThat item is not sold here.")
-
-        input("\nPress Enter to continue...")
-
-    elif choice == "7":
-        if player["level"] >= 3:
-            print("\nYou challenge the Dragon King...")
-            print("After a difficult battle, you defeat the Dragon King!")
-            print("You win the game!")
-            boss_defeated = True
-            break
-        else:
-            print("\nYou are not strong enough yet.")
-            print("Reach level 3 before challenging the Dragon King.")
-            input("\nPress Enter to continue...")
+    if boss_defeated:
+        break
 
     elif choice == "8":
         print("\nThanks for playing. Goodbye!")
