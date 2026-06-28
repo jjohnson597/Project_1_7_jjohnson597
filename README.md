@@ -2,7 +2,7 @@
 # RPG Adventure Simulator
 Project 1 - Text Based RPG
 
-Video Link: Coming soon
+Video Link:(https://youtu.be/cAN8eby74b4)
 
 This project is a text based RPG adventure game. The player creates a character, explores areas, fights monsters, earns gold, manages inventory, and makes choices through a menu system.
 
