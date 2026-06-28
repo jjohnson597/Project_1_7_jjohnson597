@@ -57,6 +57,46 @@ def rest(player):
 
     input("\nPress Enter to continue...")
 
+def visit_shop(player, inventory, shop_items):
+    """Allow the player to purchase items from the shop."""
+    print("\nShop")
+    print("----")
+    print(f"Your Gold: {player['gold']}")
+
+    for item, price in shop_items.items():
+        print(f"{item}: {price} gold")
+
+    item_choice = input("\nEnter the item name to buy or type 'exit': ")
+
+    if item_choice == "exit":
+        print("\nYou leave the shop.")
+
+    elif item_choice in shop_items:
+        item_price = shop_items[item_choice]
+
+        if player["gold"] >= item_price:
+            player["gold"] -= item_price
+            inventory.append(item_choice)
+
+            print(f"\nYou bought {item_choice}!")
+
+            if item_choice == "Iron Sword":
+                player["attack"] += 3
+                print("Your attack increased by 3.")
+
+            elif item_choice == "Steel Shield":
+                player["max_health"] += 5
+                player["health"] += 5
+                print("Your max health increased by 5.")
+
+        else:
+            print("\nYou do not have enough gold.")
+
+    else:
+        print("\nThat item is not sold here.")
+
+    input("\nPress Enter to continue...")
+
 print("Welcome to RPG Adventure Simulator!")
 print("Create your hero and begin your journey.")
 
@@ -178,11 +218,20 @@ while True:
         rest(player)
 
     elif choice == "6":
-        print("\nShop")
-        print("----")
-        print(f"Your Gold: {player['gold']}")
+        visit_shop(player, inventory, shop_items)
 
-        for item, price in shop_items.items():
+    elif choice == "7":
+        if player["level"] >= 3:
+            print("\nYou challenge the Dragon King...")
+            print("After a difficult battle, you defeat the Dragon King!")
+            print("You win the game!")
+            boss_defeated = True
+            break
+        else:
+            print("\nYou are not strong enough yet.")
+            print("Reach level 3 before challenging the Dragon King.")
+            input("\nPress Enter to continue...")
+
             print(f"{item}: {price} gold")
 
         item_choice = input("\nEnter the item name to buy or type 'exit': ")
