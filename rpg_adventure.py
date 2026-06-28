@@ -48,6 +48,15 @@ def use_health_potion(player, inventory):
 
     input("\nPress Enter to continue...")
 
+def rest(player):
+    """Restore the player's health to the maximum value."""
+    player["health"] = player["max_health"]
+
+    print("\nYou rest at camp and recover your health.")
+    print(f"Health restored to {player['health']}/{player['max_health']}.")
+
+    input("\nPress Enter to continue...")
+
 print("Welcome to RPG Adventure Simulator!")
 print("Create your hero and begin your journey.")
 
@@ -166,10 +175,7 @@ while True:
         use_health_potion(player, inventory)
 
     elif choice == "5":
-        player["health"] = player["max_health"]
-        print("\nYou rest at camp and recover your health.")
-        print(f"Health restored to {player['health']}/{player['max_health']}.")
-        input("\nPress Enter to continue...")
+        rest(player)
 
     elif choice == "6":
         print("\nShop")
