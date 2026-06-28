@@ -107,8 +107,6 @@ def challenge_boss(player):
     print("Reach level 3 before challenging the Dragon King.")
     input("\nPress Enter to continue...")
     return False
-    
-    input("\nPress Enter to continue...")
 
 def explore(player, inventory, locations, monsters):
     """Allow the player to explore a random location and experience a random event."""
