@@ -19,6 +19,16 @@ def view_character(player):
     print(f"Gold: {player['gold']}")
     input("\nPress Enter to continue...")
 
+def view_inventory(inventory):
+    """Display all items currently in the player's inventory."""
+    print("\nInventory")
+    print("---------")
+
+    for item in inventory:
+        print(f"- {item}")
+
+    input("\nPress Enter to continue...")
+
 print("Welcome to RPG Adventure Simulator!")
 print("Create your hero and begin your journey.")
 
@@ -131,13 +141,7 @@ while True:
         input("\nPress Enter to continue...")
 
     elif choice == "3":
-        print("\nInventory")
-        print("---------")
-
-        for item in inventory:
-            print(f"- {item}")
-
-        input("\nPress Enter to continue...")
+        view_inventory(inventory)
 
     elif choice == "4":
         if "Health Potion" in inventory:
