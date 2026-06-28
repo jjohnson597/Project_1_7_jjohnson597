@@ -239,8 +239,8 @@ while True:
     elif choice == "7":
         boss_defeated = challenge_boss(player)
 
-    if boss_defeated:
-        break
+        if boss_defeated:
+            break
 
     elif choice == "8":
         print("\nThanks for playing. Goodbye!")
@@ -249,3 +249,5 @@ while True:
     else:
         print("\nInvalid choice. Please enter a number from 1 to 8.")
         input("\nPress Enter to continue...")
+
+    
